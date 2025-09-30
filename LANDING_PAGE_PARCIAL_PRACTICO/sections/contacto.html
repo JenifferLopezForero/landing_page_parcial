@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contáctame / Registro</title>
+    <meta name="description" content="Formulario de registro con validaciones en JavaScript (frontend)." />
+
+    <!-- CSS global compilado desde tu Sass -->
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <!-- CSS específico del formulario -->
+    <link rel="stylesheet" href="../assets/css/form.css" />
+</head>
+
+<body>
+    <!-- Salto a contenido para accesibilidad -->
+    <a class="sr-only" href="#main">Saltar al contenido</a>
+
+    <!-- Header reutilizado -->
+    <header class="site-header" role="banner">
+        <div class="container header-inner">
+            <div class="brand">
+                <a href="../index.html" class="logo" aria-label="Ir al inicio">Jeniffer Smith López Forero</a>
+                <span class="logo-sub">Formulario de Registro</span>
+            </div>
+
+            <button id="toggleMenu" class="hamburger" aria-label="Abrir menú" aria-expanded="false"
+                aria-controls="site-nav">☰</button>
+
+            <nav id="site-nav" class="nav" aria-label="Menú principal">
+                <ul>
+                    <li><a href="../index.html#contacto">Contacto</a></li>
+                    <li><a href="../index.html#perfil">Perfil</a></li>
+                    <li><a href="../index.html#competencias-tecnicas">Comp. técnicas</a></li>
+                    <li><a href="../index.html#competencias-blandas">Comp. blandas</a></li>
+                    <li><a href="../index.html#formacion">Formación</a></li>
+                    <li><a href="../index.html#experiencia">Experiencia</a></li>
+                    <li><a href="../index.html#proyectos">Proyectos</a></li>
+                    <li><a href="../index.html#idiomas">Idiomas</a></li>
+                    <li><a href="./open.html">Open</a></li>
+                    <li><a href="./faq.html">FAQ</a></li>
+                    <li aria-current="page"><a href="./contacto.html">Contáctame</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main" class="container section">
+        <h1>Registro de usuario</h1>
+        <p class="desc">Completa los campos. El botón “Enviar” se habilita cuando todo es válido.</p>
+
+        <!-- Formulario accesible y semántico -->
+        <form id="signupForm" novalidate aria-describedby="formHelp">
+            <p id="formHelp" class="sr-only">Todos los campos marcados con * son obligatorios.</p>
+
+            <!-- Bloque: Datos personales -->
+            <fieldset class="card">
+                <legend>Datos personales</legend>
+
+                <div class="field">
+                    <label for="fullName">Nombre completo <span aria-hidden="true">*</span></label>
+                    <input id="fullName" name="fullName" type="text" inputmode="text" autocomplete="name"
+                        placeholder="Tu nombre y apellidos" minlength="3" required aria-describedby="err-fullName" />
+                    <small id="err-fullName" class="error" role="alert"></small>
+                </div>
+
+                <div class="field">
+                    <label for="email">Correo electrónico <span aria-hidden="true">*</span></label>
+                    <input id="email" name="email" type="email" inputmode="email" autocomplete="email"
+                        placeholder="nombre@dominio.com" required aria-describedby="err-email" />
+                    <small id="err-email" class="error" role="alert"></small>
+                </div>
+
+                <div class="row-2">
+                    <div class="field">
+                        <label for="password">Contraseña <span aria-hidden="true">*</span></label>
+                        <input id="password" name="password" type="password" minlength="8"
+                            placeholder="Min. 8 caracteres, Aa1!"
+                            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$" required
+                            aria-describedby="err-password" />
+                        <small id="err-password" class="error" role="alert"></small>
+                    </div>
+
+                    <div class="field">
+                        <label for="confirm">Confirmar contraseña <span aria-hidden="true">*</span></label>
+                        <input id="confirm" name="confirm" type="password" placeholder="Repite tu contraseña" required
+                            aria-describedby="err-confirm" />
+                        <small id="err-confirm" class="error" role="alert"></small>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- Bloque: Datos de contacto -->
+            <fieldset class="card">
+                <legend>Datos de contacto</legend>
+
+                <div class="field">
+                    <label for="birthdate">Fecha de nacimiento <span aria-hidden="true">*</span></label>
+                    <input id="birthdate" name="birthdate" type="date" required aria-describedby="err-birthdate" />
+                    <small id="err-birthdate" class="error" role="alert"></small>
+                </div>
+
+                <div class="row-2">
+                    <div class="field">
+                        <label for="cell">Celular <span aria-hidden="true">*</span></label>
+                        <!-- Colombia: 3xxxxxxxxx o +57 3xxxxxxxxx -->
+                        <input id="cell" name="cell" type="tel" inputmode="numeric"
+                            placeholder="+57 3xx xxx xxxx o 3xxxxxxxxx" pattern="^(\+?57\s*)?(3\d{9})$" required
+                            aria-describedby="err-cell" />
+                        <small id="err-cell" class="error" role="alert"></small>
+                    </div>
+
+                    <div class="field">
+                        <label for="phone">Teléfono (opcional)</label>
+                        <!-- 10 dígitos si se ingresa -->
+                        <input id="phone" name="phone" type="tel" inputmode="numeric"
+                            placeholder="Fijo o móvil (10 dígitos)" pattern="^$|^\d{10}$"
+                            aria-describedby="err-phone" />
+                        <small id="err-phone" class="error" role="alert"></small>
+                    </div>
+                </div>
+
+                <label class="checkbox">
+                    <input id="terms" name="terms" type="checkbox" required aria-describedby="err-terms" />
+                    <span>Acepto los términos y condiciones</span>
+                </label>
+                <small id="err-terms" class="error" role="alert"></small>
+            </fieldset>
+
+            <div class="row-2">
+                <button id="submitBtn" type="submit" disabled>Enviar</button>
+                <button type="reset">Limpiar</button>
+            </div>
+
+            <p id="successMsg" class="success" role="status" aria-live="polite">✅ ¡Registro completado correctamente!
+            </p>
+        </form>
+    </main>
+
+    <footer class="site-footer container" role="contentinfo">
+        <p>© <span id="y"></span> Jeniffer Smith López Forero. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+    <script src="../assets/js/menu.js" defer></script>
+    <!-- ÚNICO script de validación -->
+    <script src="../assets/js/register.js" defer></script>
+</body>
+
+</html>

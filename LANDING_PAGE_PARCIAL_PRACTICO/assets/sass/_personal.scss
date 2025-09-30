@@ -1,0 +1,421 @@
+@use "variables" as *;
+
+/* Ocultar visualmente pero mantener accesible/SEO */
+.sr-only {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* =============== Base tipográfica =============== */
+* {
+    box-sizing: border-box
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+body {
+    margin: 0;
+    background: $bg;
+    color: $text;
+    font: 18px/1.7 $font;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block
+}
+
+a {
+    color: $brand;
+    text-decoration: none
+}
+
+a:hover {
+    color: $brand-600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+a:focus-visible {
+    @include focus-ring
+}
+
+.container {
+    width: min($maxw, 92%);
+    margin-inline: auto
+}
+
+.section {
+    padding: $space-3 0
+}
+
+/* =============== Headings =============== */
+h1,
+h2,
+h3 {
+    line-height: 1.22;
+    margin: 0 0 .6rem
+}
+
+h1 {
+    font-size: clamp(2rem, 2vw + 1rem, 2.4rem)
+}
+
+h2 {
+    font-size: clamp(1.45rem, 1vw + 1rem, 1.8rem)
+}
+
+h3 {
+    font-size: 1.15rem
+}
+
+/* Subrayado de sección */
+.section>h2::after {
+    content: "";
+    display: block;
+    width: 64px;
+    height: 3px;
+    margin-top: .5rem;
+    background: linear-gradient(90deg, $brand, $accent);
+    border-radius: 2px;
+}
+
+/* =============== Header/Nav glass =============== */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: linear-gradient(180deg, rgba(10, 11, 16, .85), rgba(10, 11, 16, .55));
+    border-bottom: 1px solid $border;
+    backdrop-filter: saturate(140%) blur(6px);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .9rem 0;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.logo {
+    color: $text;
+    font-weight: 800;
+    letter-spacing: .2px
+}
+
+/* ==== Brand compacto y sin redundancias ==== */
+.brand {
+    display: flex;
+    align-items: baseline;
+    gap: .5rem;
+    flex-wrap: wrap;
+    line-height: 1.1;
+}
+
+.logo {
+    font-size: clamp(1rem, 1vw + .7rem, 1.25rem);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 38ch;
+    display: inline-block;
+}
+
+.logo-sub {
+    margin-top: 2px;
+    font-size: .85rem;
+    color: $muted;
+    font-weight: 600;
+    letter-spacing: .2px;
+    white-space: nowrap;
+}
+
+@media (max-width:1024px) {
+    .logo {
+        max-width: 26ch
+    }
+}
+
+@media (max-width:768px) {
+    .logo {
+        max-width: 22ch
+    }
+
+    .logo-sub {
+        display: none
+    }
+}
+
+.nav ul {
+    display: flex;
+    gap: 1.15rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.nav a {
+    color: $muted;
+    font-size: .98rem
+}
+
+.nav a:hover {
+    color: $text
+}
+
+.hamburger {
+    display: none;
+    background: transparent;
+    border: 0;
+    color: $text;
+    font-size: 1.2rem;
+}
+
+@media (max-width:768px) {
+    .hamburger {
+        display: block
+    }
+
+    .nav ul {
+        display: none;
+        flex-direction: column;
+        gap: .75rem;
+        padding: 1rem;
+        background: $surface;
+        border: 1px solid $border;
+        border-radius: $radius;
+    }
+
+    .nav ul.visible {
+        display: flex
+    }
+}
+
+/* =============== Tarjetas genéricas =============== */
+.card {
+    background: linear-gradient(145deg, $card-a, $card-b);
+    border: 1px solid $border;
+    border-radius: $radius;
+    padding: 1.25rem;
+    @include soft-shadow;
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, .46);
+    border-color: rgba(255, 255, 255, .12);
+}
+
+/* =============== Avatar =============== */
+.avatar-ring {
+    width: 150px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    padding: 4px;
+    background: conic-gradient($brand, $accent);
+    box-shadow: 0 6px 22px rgba(0, 0, 0, .35);
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    background: #0a0a0f;
+}
+
+@media (max-width:640px) {
+    .avatar-ring {
+        width: 110px
+    }
+}
+
+/* =============== Texto destacado (perfil) =============== */
+.lead {
+    color: $text;
+    opacity: .95;
+    font-size: clamp(1.02rem, .3vw + 1rem, 1.12rem);
+    max-width: 72ch;
+}
+
+/* =============== Chips =============== */
+.pill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .65rem;
+    margin-top: .6rem;
+}
+
+.pill-list li {
+    list-style: none;
+    padding: .52rem .9rem;
+    border-radius: 999px;
+    color: $text;
+    background: $brand-ghost;
+    border: 1px solid rgba(124, 92, 255, .28);
+    transition: transform .18s ease, background .18s ease;
+}
+
+.pill-list li:hover {
+    transform: translateY(-2px);
+    background: rgba(124, 92, 255, .20);
+}
+
+/* =============== Grilla de proyectos =============== */
+.cards {
+    display: grid;
+    gap: 1.15rem
+}
+
+@media (min-width:900px) {
+    .cards {
+        grid-template-columns: 1fr 1fr
+    }
+}
+
+/* =============== Footer =============== */
+.site-footer {
+    border-top: 1px solid $border;
+    color: $muted;
+    padding: 1.25rem 0;
+    text-align: center;
+}
+
+/* =========================================================
+   CONTACTO V2 – layout limpio (usar con .contacto--v2)
+   ========================================================= */
+.contacto-card {
+    background: linear-gradient(145deg, $card-a, $card-b);
+    border: 1px solid $border;
+    border-radius: $radius;
+    padding: 1.4rem;
+}
+
+.contacto-card:hover {
+    transform: none;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, .40), 0 1px 0 $border inset;
+    border-color: $border;
+}
+
+/* Cabecera: avatar + nombre/rol */
+.contacto--v2 .contacto-head {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.1rem;
+    align-items: center;
+    margin-bottom: 1.1rem;
+}
+
+.contacto--v2 .contacto-name {
+    margin: 0 0 .2rem;
+    font-size: clamp(1.2rem, 1.2vw + 1rem, 1.6rem);
+    font-weight: 800;
+}
+
+.contacto--v2 .contacto-role {
+    margin: 0;
+    color: $muted;
+    font-weight: 600
+}
+
+/* Grilla de datos */
+.contacto--v2 .contacto-grid {
+    margin: 0;
+    display: grid;
+    gap: .8rem;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width:860px) {
+    .contacto--v2 .contacto-grid {
+        grid-template-columns: 1fr 1fr
+    }
+}
+
+.contacto--v2 .contacto-grid .item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: .6rem;
+    align-items: start;
+    padding: .65rem .8rem;
+    background: rgba(255, 255, 255, .03);
+    border: 1px solid $border;
+    border-radius: 12px;
+}
+
+.contacto--v2 .contacto-grid dt {
+    margin: 0;
+    color: $muted;
+    font-weight: 700;
+    font-size: .95rem;
+}
+
+.contacto--v2 .contacto-grid dd {
+    margin: 0;
+    color: $text;
+    font-size: 1.02rem;
+    line-height: 1.55;
+    word-break: break-word;
+}
+
+/* Densidad */
+.section.section-contacto {
+    padding: 1.75rem 0
+}
+
+/* =========================================================
+   NUEVO: Validaciones de formulario (errores / estados)
+   ========================================================= */
+.field-error {
+    color: #ff6b6b;
+    font-size: .9rem;
+    margin-top: .35rem;
+}
+
+.field-hint {
+    color: rgba(255, 255, 255, .65);
+    font-size: .85rem;
+}
+
+.field-error:empty {
+    display: block;
+    height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.is-invalid {
+    border-color: #ff6b6b !important;
+    outline: none;
+}
+
+.is-valid {
+    border-color: #16c79a !important;
+    outline: none;
+}
+
+.alert-success {
+    background: rgba(22, 199, 154, .12);
+    color: #16c79a;
+    border: 1px solid rgba(22, 199, 154, .35);
+    padding: .75rem 1rem;
+    border-radius: 12px;
+    margin: .75rem 0 1rem;
+}

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CV Profesional – Jeniffer Smith López Forero</title>
+    <meta name="description"
+        content="CV online de Jeniffer Smith López Forero: perfil, competencias, formación, experiencia y proyectos." />
+    <meta property="og:title" content="CV – Jeniffer Smith López Forero" />
+    <meta property="og:description" content="Perfil, competencias, formación, experiencia y proyectos." />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#0f0f10" />
+
+    <!-- Tipografía -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- CSS compilado desde Sass -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body>
+    <!-- Enlace “saltar al contenido” para lector de pantalla y teclado -->
+    <a class="sr-only" href="#inicio">Saltar al contenido</a>
+
+    <!-- ================= Header ================= -->
+    <header class="site-header" role="banner">
+        <div class="container header-inner">
+            <div class="brand">
+                <!-- h1 accesible (no visible) para evitar redundancias -->
+                <h1 class="sr-only">CV de Jeniffer Smith López Forero</h1>
+
+                <!-- Marca visible -->
+                <a href="#inicio" class="logo" aria-label="Ir al inicio">Jeniffer Smith López Forero</a>
+                <span class="logo-sub">CV profesional</span>
+            </div>
+
+            <button id="toggleMenu" class="hamburger" aria-label="Abrir menú" aria-expanded="false"
+                aria-controls="site-nav">☰</button>
+
+            <nav id="site-nav" class="nav" aria-label="Menú principal">
+                <ul>
+                    <!-- En home, Contacto es la primera sección visible: aria-current="page" mejora el contexto -->
+                    <li><a href="#contacto" aria-current="page">Contacto</a></li>
+                    <li><a href="#perfil">Perfil</a></li>
+                    <li><a href="#competencias-tecnicas">Comp. técnicas</a></li>
+                    <li><a href="#competencias-blandas">Comp. blandas</a></li>
+                    <li><a href="#formacion">Formación</a></li>
+                    <li><a href="#experiencia">Experiencia</a></li>
+                    <li><a href="#proyectos">Proyectos</a></li>
+                    <li><a href="#idiomas">Idiomas</a></li>
+                    <!-- Páginas del proyecto -->
+                    <li><a href="sections/open.html" rel="noopener">Open</a></li>
+                    <li><a href="sections/faq.html" rel="noopener">FAQ</a></li>
+                    <li><a href="sections/contacto.html" rel="noopener">Contáctame</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ================= Main ================= -->
+    <main id="inicio" class="container">
+        <!-- Contacto -->
+        <section id="contacto" class="section section-contacto" aria-labelledby="titulo-contacto">
+            <h2 id="titulo-contacto">Contacto</h2>
+
+            <article class="contacto-card contacto--v2" aria-label="Información de contacto">
+                <header class="contacto-head">
+                    <div class="avatar-ring" aria-hidden="true">
+                        <!-- Preparado para WebP si luego agregas la versión -->
+                        <picture>
+                            <source srcset="assets/images/my_profile.jpg" type="image/webp" />
+                            <img src="assets/images/my_profile.jpg" alt="Foto de perfil de Jeniffer Smith López Forero"
+                                class="avatar" width="180" height="180" loading="lazy" />
+                        </picture>
+                    </div>
+
+                    <div class="contacto-head__meta">
+                        <h3 class="contacto-name">Jeniffer Smith López Forero</h3>
+                        <p class="contacto-role">Ingeniera de Software</p>
+                    </div>
+                </header>
+
+                <dl class="contacto-grid">
+                    <div class="item">
+                        <dt>Email</dt>
+                        <dd><a href="mailto:forerojeni@gmail.com" rel="noopener noreferrer">forerojeni@gmail.com</a>
+                        </dd>
+                    </div>
+                    <div class="item">
+                        <dt>Teléfono</dt>
+                        <dd>+57&nbsp;3103682377</dd>
+                    </div>
+                    <div class="item">
+                        <dt>Ubicación</dt>
+                        <dd>Bogotá, Colombia</dd>
+                    </div>
+                    <div class="item">
+                        <dt>LinkedIn</dt>
+                        <dd>
+                            <a target="_blank" rel="noopener noreferrer"
+                                href="https://www.linkedin.com/in/jeniffer-smith-l%C3%B3pez-forero-4ba868355/">
+                                linkedin.com/in/jeniffer-smith-lópez-forero
+                            </a>
+                        </dd>
+                    </div>
+                    <div class="item">
+                        <dt>GitHub</dt>
+                        <dd>
+                            <a target="_blank" rel="noopener noreferrer" href="https://github.com/JenifferLopezForero">
+                                github.com/JenifferLopezForero
+                            </a>
+                        </dd>
+                    </div>
+                </dl>
+            </article>
+        </section>
+
+        <!-- Perfil profesional -->
+        <section id="perfil" class="section" aria-labelledby="titulo-perfil">
+            <h2 id="titulo-perfil">Perfil profesional</h2>
+            <article class="card card--hover" aria-label="Resumen profesional">
+                <p class="lead">
+                    Estudiante de Ingeniería de Software (noveno semestre) con conocimientos en desarrollo front-end y
+                    back-end.
+                    Me destaco por aprendizaje rápido, adaptabilidad, trabajo en equipo, resolución de problemas,
+                    capacidad de
+                    análisis y autonomía. Busco prácticas donde aplicar buenas prácticas, accesibilidad y metodologías
+                    ágiles,
+                    aportando valor en proyectos web y móviles.
+                </p>
+            </article>
+        </section>
+
+        <!-- Competencias técnicas -->
+        <section id="competencias-tecnicas" class="section" aria-labelledby="titulo-tecnicas">
+            <h2 id="titulo-tecnicas">Competencias técnicas</h2>
+            <article class="card card--hover" aria-label="Competencias técnicas">
+                <ul class="pill-list" role="list">
+                    <li>HTML5 / CSS / JavaScript (ES6+)</li>
+                    <li>React / Next.js</li>
+                    <li>Node.js / Java / Python / Dart</li>
+                    <li>Flutter (apps móviles)</li>
+                    <li>Unity (2D/3D)</li>
+                    <li>Firebase (Auth / Firestore)</li>
+                    <li>Git / GitHub / Sourcetree</li>
+                    <li>Jira / Notion</li>
+                    <li>QA (Zephyr, Azure)</li>
+                    <li>DevOps básico</li>
+                </ul>
+            </article>
+        </section>
+
+        <!-- Competencias blandas -->
+        <section id="competencias-blandas" class="section" aria-labelledby="titulo-blandas">
+            <h2 id="titulo-blandas">Competencias blandas</h2>
+            <article class="card card--hover" aria-label="Competencias blandas">
+                <ul class="pill-list" role="list">
+                    <li>Trabajo en equipo</li>
+                    <li>Comunicación</li>
+                    <li>Adaptabilidad</li>
+                    <li>Aprendizaje rápido</li>
+                    <li>Resolución de problemas</li>
+                    <li>Análisis</li>
+                    <li>Autonomía</li>
+                    <li>Gestión ágil (Scrum)</li>
+                </ul>
+            </article>
+        </section>
+
+        <!-- Formación -->
+        <section id="formacion" class="section" aria-labelledby="titulo-formacion">
+            <h2 id="titulo-formacion">Formación académica</h2>
+            <article class="card card--hover">
+                <h3>Ingeniería de Software – Universidad Manuela Beltrán (Bogotá)</h3>
+                <p>
+                    <time datetime="2021-08">Ago 2021</time> – <time datetime="2026-06">Jun 2026</time>
+                    · Actualmente en 9.º semestre.
+                </p>
+            </article>
+        </section>
+
+        <!-- Experiencia -->
+        <section id="experiencia" class="section" aria-labelledby="titulo-experiencia">
+            <h2 id="titulo-experiencia">Experiencia</h2>
+            <article class="card card--hover">
+                <h3>Front-end y Back-end Developer — Proyectos académicos</h3>
+                <p><time datetime="2023-01">2023</time> – <time datetime="2024-12">2024</time></p>
+                <ul>
+                    <li>Implementación de Agile/Scrum en proyectos universitarios.</li>
+                    <li>UI con HTML5, CSS y JavaScript; uso de React y Node.</li>
+                    <li>Apps móviles con Flutter y videojuegos 2D/3D en Unity.</li>
+                    <li>QA con Zephyr y Azure.</li>
+                    <li>Git, GitHub, Sourcetree, Jira, Notion.</li>
+                </ul>
+            </article>
+        </section>
+
+        <!-- Proyectos -->
+        <section id="proyectos" class="section" aria-labelledby="titulo-proyectos">
+            <h2 id="titulo-proyectos">Proyectos destacados</h2>
+            <div class="cards">
+                <article class="card card--hover">
+                    <h3>GeoVisor — UMB (2024)</h3>
+                    <p>App móvil en Flutter con Google Maps y Firebase para trueque/reciclaje.</p>
+                    <ul>
+                        <li>Autenticación y base de datos (Auth/Firestore).</li>
+                        <li>Mapas interactivos con Google Maps API.</li>
+                        <li>Gestión ágil en Jira y QA con Zephyr.</li>
+                    </ul>
+                </article>
+
+                <article class="card card--hover">
+                    <h3>Hoja de vida web — UMB</h3>
+                    <p>CV online con HTML semántico y SCSS; publicación en GitHub.</p>
+                    <ul>
+                        <li>Estructura modular de estilos con variables y parciales.</li>
+                        <li>Validación W3C y optimización con Lighthouse.</li>
+                        <li>Repositorio y despliegue en GitHub.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <!-- Idiomas -->
+        <section id="idiomas" class="section" aria-labelledby="titulo-idiomas">
+            <h2 id="titulo-idiomas">Idiomas</h2>
+            <article class="card card--hover" aria-label="Idiomas">
+                <ul class="pill-list" role="list">
+                    <li>Español — Nativo</li>
+                </ul>
+            </article>
+        </section>
+
+        <!-- Promos con UTM -->
+        <section id="promos" class="section" aria-labelledby="titulo-promos">
+            <h2 id="titulo-promos">Promociones</h2>
+            <div class="teasers">
+                <article class="teaser card">
+                    <h3>Portafolio</h3>
+                    <p>Proyectos web y móviles.</p>
+                    <p>
+                        <a class="btn btn-cta" data-banner="1"
+                            href="https://tu-portfolio.com/?utm_source=cv&utm_medium=banner&utm_campaign=corte1"
+                            target="_blank" rel="noopener noreferrer">Ver Portafolio</a>
+                    </p>
+                </article>
+                <article class="teaser card">
+                    <h3>Blog técnico</h3>
+                    <p>Notas de Django, FastAPI y BI.</p>
+                    <p>
+                        <a class="btn btn-cta" data-banner="2"
+                            href="https://tu-blog.com/?utm_source=cv&utm_medium=banner&utm_campaign=corte1"
+                            target="_blank" rel="noopener noreferrer">Leer Blog</a>
+                    </p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= Footer ================= -->
+    <footer class="site-footer container" role="contentinfo">
+        <p>© <span id="y"></span> Jeniffer Smith López Forero. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById('y').textContent = new Date().getFullYear();
+    </script>
+    <script src="assets/js/menu.js" defer></script>
+    <script src="assets/js/app.js" defer></script>
+</body>
+
+</html>

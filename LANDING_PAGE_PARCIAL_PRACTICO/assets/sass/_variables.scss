@@ -1,0 +1,36 @@
+/* ===== THEME TOKENS ===== */
+$bg: #0a0a0f; // fondo
+$surface: #11131a; // nav
+$card-a: #171923; // tarjeta base
+$card-b: #1d2030; // tarjeta gradiente
+$border: rgba(255, 255, 255, .08);
+
+$text: #f1f3f9;
+$muted: #9aa3b2;
+
+$brand: #7c5cff; // acento principal
+$brand-600: #6b4cff; // hover
+$brand-ghost: rgba(124, 92, 255, .12);
+
+$accent: #3dd9c4; // acento secundario sutil
+
+$radius: 16px;
+$radius-sm: 12px;
+$radius-lg: 22px;
+
+$space: 1rem; // 16px
+$space-2: 1.5rem;
+$space-3: 2.25rem;
+$maxw: 1140px;
+
+$font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Arial;
+
+/* ===== MIXINS ===== */
+@mixin soft-shadow {
+    box-shadow: 0 10px 28px rgba(0, 0, 0, .40), 0 1px 0 $border inset;
+}
+
+@mixin focus-ring {
+    outline: 2px solid rgba($brand, .65);
+    outline-offset: 2px;
+}
