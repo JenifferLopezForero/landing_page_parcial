@@ -1,0 +1,13 @@
+# Dependencias y caches
+node_modules/
+.vercel/
+dist/
+build/
+
+# SO/editores
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Mapas de CSS (si no quieres subirlos)
+*.map
